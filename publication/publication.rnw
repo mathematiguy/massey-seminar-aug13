@@ -1,0 +1,214 @@
+\SweaveOpts{echo=FALSE, results=tex}
+
+<<load>>=
+library(xtable)
+summ <- read.csv('../analysis/data-summary.csv')
+@ 
+
+%% This is file `elsarticle-template-2-harv.tex',
+%%
+%% Copyright 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%%
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+%%
+%% $Id: elsarticle-template-2-harv.tex 155 2009-10-08 05:35:05Z rishi $
+%% $URL: http://lenova.river-valley.com/svn/elsbst/trunk/elsarticle-template-2-harv.tex $
+%%
+\documentclass[preprint,authoryear,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,authoryear,1p,times]{elsarticle}
+%% \documentclass[final,authoryear,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,authoryear,3p,times]{elsarticle}
+%% \documentclass[final,authoryear,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,authoryear,5p,times]{elsarticle}
+%% \documentclass[final,authoryear,5p,times,twocolumn]{elsarticle}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+%% \usepackage{graphics}
+%% or use the graphicx package for more complicated commands
+%% \usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+\usepackage{hyperref,multirow,booktabs}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+\usepackage{amsmath}
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon (default)
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   authoryear - selects author-year citations (default)
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%   longnamesfirst  -  makes first citation full author list
+%%
+%% \biboptions{longnamesfirst,comma}
+
+% \biboptions{}
+
+\journal{Ecological Pondering}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{Length variations of \textit{Mollux insignificans} in three
+different habitats}
+
+\author{John Doe\corref{cor1}}
+\ead{j.doe@email.prov.com}
+\ead[url]{http://www.jdoe.co.nz}
+\cortext[cor1]{Corresponding author}
+\address{Econerd Science Lab, PO Box 12345, Palmerston North, New Zealand}
+
+
+
+\begin{abstract}
+Shortest abstract ever!
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+  Mollux insignificans \sep length measurements \sep Science is fun
+  %% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+
+\section{Introduction}
+
+We measured the length of \Sexpr{sum(summ[,'n'])} individuals of
+\textit{Mollux insignificans} from \Sexpr{nrow(summ)} different populations
+on the other side of the world in order to assess any potential
+differences in sizes between the different habitats.  We did not try
+to replicate the results of \cite{smith_study_03}, nor those of
+\cite{wesson_project_99}, as it was just for fun, really.
+
+
+\section{Methods}
+
+We first drove to each place, not too early in the morning. And we
+measured the length of a bunch of individuals with a ZZZ1234 ruler
+from MeasureEverything$^\copyright$.
+
+
+\section{Results}
+
+The number of individuals from which measurements were made varied
+between sites. In site 1, we measured the length of 
+\Sexpr{summ[summ[,'population'] == 1, 'n']} individuals, in site 2, 
+\Sexpr{summ[summ[,'population'] == 2, 'n']}, and in site 3, 
+\Sexpr{summ[summ[,'population'] == 3, 'n']}.  The mean length varied
+from \Sexpr{round(min(summ$mean),2)} at population
+\Sexpr{summ$population[which.min(summ$mean)]} to 
+\Sexpr{round(max(summ$mean),2)} at population
+\Sexpr{summ$population[which.max(summ$mean)]}.  A summary of the
+measurements is presented in \autoref{tab:summary}.
+
+\begin{table}[htbp]
+  \caption{Summary of the length of individuals of \textit{Mollux insignificans}}
+\label{tab:summary}
+\begin{center}
+\begin{small}
+\begin{tabular}{lrrr}
+Population & N & Mean & S.d. \\
+\addlinespace
+<<summary>>=
+print(xtable(summ, digits=c(NA, 0,0,2,2)),
+  hline.after=c(), only.contents=T, include.rownames=F, floating=F, include.colnames=F,
+  sanitize.text.function=function(x){x})
+@
+\end{tabular}
+\end{small}
+\end{center}
+\end{table}
+
+
+The distribution of lengths in each population is shown in \autoref{fig:distrib}.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=.8\textwidth]{../analysis/length_distribution.pdf}
+\end{center}
+\caption{Distribution of individual lengths in three population of \textit{Mollux insignificans}}
+\label{fig:distrib}
+\end{figure}
+
+
+\section{Discussion}
+
+Almost surprisingly, our results suggest a difference in the mean
+length between populations.
+
+
+\section{References}
+
+\bibliographystyle{model2-names}
+\bibliography{biblio.bib}{}
+
+
+\end{document}

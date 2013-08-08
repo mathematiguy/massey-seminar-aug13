@@ -1,5 +1,6 @@
-massey-seminar-aug13
+From data to report
 ====================
+### State-of-the art tools for streamlining data management, analysis and report production in ecological research
 
 ## Content
 ### presentation

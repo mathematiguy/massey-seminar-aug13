@@ -11,7 +11,7 @@ sd_length = 2
 
 ## number of individuals sampled
 sample_size_pop1 = 30
-sample_size_pop2 = 40
+sample_size_pop2 = 70
 sample_size_pop3 = 170
 
 

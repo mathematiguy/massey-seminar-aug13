@@ -2,7 +2,7 @@
 ## 3 populations of shellfish sp.; the length of a number of individuals in each population is measured
 
 ## mean lengths for the 3 populations
-mean_length_pop1 = 7
+mean_length_pop1 = 5
 mean_length_pop2 = 15
 mean_length_pop3 = 12
 
